@@ -48,9 +48,11 @@ int main(int argc, const char** argv) {
   usDataPostscan3D data;
   if (argc != 2) {
     std::cerr << "Wrong number of arguments" << std::endl;
+	std::cout << "Usage : ./postscan3D.exe /path/to/3dimage.mhd" << std::endl;
+	std::cout << "Output image will be written near the .exe" << std::endl;
     exit(EXIT_FAILURE);
   }
-  std::string filename = std::string(argv[1]) + "/postscan3D.mhd";
+  std::string filename = std::string(argv[1]) + "/postscan3d.mhd";
   usDataIo::read(data, filename.c_str());
   filename = std::string(argv[1]) + "/postscan3D_out.mhd";
   usDataIo::write(data, filename.c_str());

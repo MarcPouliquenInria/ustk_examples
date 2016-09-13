@@ -46,12 +46,13 @@
  */
 int main(int argc, const char** argv) {
   usDataPrescan2D data;
- /* if (argc != 2) {
+  if (argc != 2) {
     std::cerr << "Wrong number of arguments" << std::endl;
+	std::cout << "Usage : ./prescan2D.exe /path/to/2dimage.png" << std::endl;
+	std::cout << "Output image will be written near the .exe" << std::endl;
     exit(EXIT_FAILURE);
   }
-  std::string filename = std::string(argv[1]) + "prescan2D.png");*/
-  std::string filename = std::string("prescan2D.png");
+  std::string filename = std::string(argv[1]) + "prescan2D.png";
   usDataIo::read(data, filename.c_str());
   std::cout << "data read" << std:: endl;
   filename = std::string("prescan2D_out.png");
