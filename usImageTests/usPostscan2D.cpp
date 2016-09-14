@@ -16,7 +16,7 @@ int main(int argc, const char** argv) {
 	usImagePostScan2D imagePostScan(img,usImageSettings());
 	imagePostScan.setProbeRadius(40.10f);
 	std::cout << "probe radius : " << imagePostScan.getProbeRadius() << std::endl;
-	std::string outputFileName("prescan2D2D_COPY.png");
+	std::string outputFileName("prescan2D_COPY.png");
 	vpImageIo::write(img, outputFileName);
 	exit(EXIT_SUCCESS);
 }
