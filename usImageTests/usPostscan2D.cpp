@@ -4,18 +4,16 @@
 
 
 int main(int argc, const char** argv) {
-	/*if (argc != 2) {
-		std::cerr << "Wrong number of arguments" << std::endl;
-		std::cout << "Usage : ./usPostscan2D.exe /path/to/2dimage.png" << std::endl;
-		std::cout << "Output image will be written near the .exe" << std::endl;
-		exit(EXIT_FAILURE);
-	}*/
 	vpImage<unsigned char> img;
 	std::string filename = std::string("prescan2D.png");
 	vpImageIo::read(img, filename.c_str());
 	usImagePostScan2D imagePostScan(img,usImageSettings());
-	imagePostScan.setProbeRadius(40.10f);
-	std::cout << "probe radius : " << imagePostScan.getProbeRadius() << std::endl;
+  imagePostScan.setProbeRadius(40.10f);
+  imagePostScan.setBSampleFreq(10.5f);
+  imagePostScan.setLineAngle(55.84f);
+  imagePostScan.setProbeElementPitch(0.05f);
+  std::cout << "probe info : " << std::endl;
+  imagePostScan.printProbeSettings();
 	std::string outputFileName("prescan2D_COPY.png");
 	vpImageIo::write(img, outputFileName);
 	exit(EXIT_SUCCESS);

@@ -10,7 +10,7 @@ int main(int argc, const char** argv) {
   std::cout << "Output image will be written near the .exe" << std::endl;
   exit(EXIT_FAILURE);
   }*/
-#if 0
+#if 0 //vpImage<short> not managed by vpImageIO :/
   vpImage<short> img;
   std::string filename = std::string("prescan2D.png");
   vpImageIo::read(img, filename.c_str());
