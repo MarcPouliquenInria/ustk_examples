@@ -2,7 +2,6 @@
 #include <visp3/io/vpImageIo.h>
 #include <visp3/ustk_core/usImageRF2D.h>
 
-
 int main(int argc, const char** argv) {
   /*if (argc != 2) {
   std::cerr << "Wrong number of arguments" << std::endl;

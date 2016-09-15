@@ -1,6 +1,4 @@
-#include <visp3/ustk_core/usImage3D.h>
 #include <visp3/ustk_core/usImagePostScan3D.h>
-
 
 int main(int argc, const char** argv) {
 	usImage3D<unsigned char> img;

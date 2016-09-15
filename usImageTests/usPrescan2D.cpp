@@ -32,6 +32,5 @@ int main(int argc, const char** argv) {
   //std::string outputFileNameDouble("prescanUChar2D_COPY.png");
   //vpImageIo::write(imgDouble, outputFileNameDouble);
 
-
   exit(EXIT_SUCCESS);
 }
