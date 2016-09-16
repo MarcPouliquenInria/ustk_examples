@@ -6,7 +6,13 @@ int main(int argc, const char** argv) {
   std::cout << "Testing usImagePreScan2D<unsigned char> : " << std::endl;
   vpImage<unsigned char> imgUChar;
   std::string filenameUChar = std::string("prescanUChar2D.png");
-  vpImageIo::read(imgUChar, filenameUChar.c_str());
+  try {
+    vpImageIo::read(imgUChar, filenameUChar.c_str());
+  }
+  catch (std::exception e) {
+    std::cout << "Error reading image file !" << std::endl;
+    std::cout << e.what() << std::endl;
+  }
   usImagePreScan2D<unsigned char> imagePreScanUChar(imgUChar, usImageSettings());
   imagePreScanUChar.setProbeRadius(40.10f);
   imagePreScanUChar.setBSampleFreq(10.5f);

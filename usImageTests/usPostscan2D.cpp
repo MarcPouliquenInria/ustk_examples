@@ -5,8 +5,14 @@
 
 int main(int argc, const char** argv) {
 	vpImage<unsigned char> img;
-	std::string filename = std::string("prescan2D.png");
-	vpImageIo::read(img, filename.c_str());
+	std::string filename = std::string("postcan2D.png");
+  try {
+    vpImageIo::read(img, filename.c_str());
+  }
+  catch (std::exception e) {
+    std::cout << "Error reading image file !" << std::endl;
+    std::cout << e.what() << std::endl;
+  }
 	usImagePostScan2D imagePostScan(img,usImageSettings());
   imagePostScan.setProbeRadius(40.10f);
   imagePostScan.setBSampleFreq(10.5f);
