@@ -8,12 +8,10 @@ int main(int argc, const char** argv) {
   std::cout << "probe info at init : " << std::endl;
   imageRF3D.printProbeSettings();
   imageRF3D.setProbeRadius(40.10f);
-  imageRF3D.setBSampleFreq(10.5f);
-  imageRF3D.setFrameAngle(15.3f);
-  imageRF3D.setLineAngle(55.84f);
+  imageRF3D.setScanLinePitch(8.04);
+  imageRF3D.setImageConvex(true);
   imageRF3D.setMotorRadius(5.54f);
-  imageRF3D.setProbeElementPitch(0.05f);
-  imageRF3D.setProbeRadius(45.86f);
+  imageRF3D.setFramePitch(0.05f);
   std::cout << "probe info after setting them : " << std::endl;
   imageRF3D.printProbeSettings();
 

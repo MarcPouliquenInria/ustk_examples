@@ -10,11 +10,10 @@ int main(int argc, const char** argv) {
   std::cout << "probe default info : " << std::endl;
   imagePreScan3DUChar.printProbeSettings();
   imagePreScan3DUChar.setProbeRadius(40.10f);
-  imagePreScan3DUChar.setBSampleFreq(10.5f);
-  imagePreScan3DUChar.setFrameAngle(15.3f);
-  imagePreScan3DUChar.setLineAngle(55.84f);
+  imagePreScan3DUChar.setScanLinePitch(8.04);
+  imagePreScan3DUChar.setImageConvex(true);
   imagePreScan3DUChar.setMotorRadius(5.54f);
-  imagePreScan3DUChar.setProbeElementPitch(0.05f);
+  imagePreScan3DUChar.setFramePitch(0.05f);
   //print updated values
   std::cout << "probe new info : " << std::endl;
   imagePreScan3DUChar.printProbeSettings();
@@ -28,11 +27,10 @@ int main(int argc, const char** argv) {
   std::cout << "probe info : " << std::endl;
   imagePreScan3DDouble.printProbeSettings();
   imagePreScan3DDouble.setProbeRadius(40.10f);
-  imagePreScan3DDouble.setBSampleFreq(10.5f);
-  imagePreScan3DDouble.setFrameAngle(15.3f);
-  imagePreScan3DDouble.setLineAngle(55.84f);
+  imagePreScan3DDouble.setScanLinePitch(8.04);
+  imagePreScan3DDouble.setImageConvex(true);
   imagePreScan3DDouble.setMotorRadius(5.54f);
-  imagePreScan3DDouble.setProbeElementPitch(0.05f);
+  imagePreScan3DDouble.setFramePitch(0.05f);
   //print updated values
   std::cout << "probe new info : " << std::endl;
   imagePreScan3DDouble.printProbeSettings();

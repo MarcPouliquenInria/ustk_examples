@@ -15,9 +15,8 @@ int main(int argc, const char** argv) {
   }
 	usImagePostScan2D imagePostScan(img,usImageSettings());
   imagePostScan.setProbeRadius(40.10f);
-  imagePostScan.setBSampleFreq(10.5f);
-  imagePostScan.setLineAngle(55.84f);
-  imagePostScan.setProbeElementPitch(0.05f);
+  imagePostScan.setScanLinePitch(8.04);
+  imagePostScan.setImageConvex(true);
   std::cout << "probe info : " << std::endl;
   imagePostScan.printProbeSettings();
 	std::string outputFileName("prescan2D_COPY.png");

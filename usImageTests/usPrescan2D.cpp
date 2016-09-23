@@ -15,9 +15,8 @@ int main(int argc, const char** argv) {
   }
   usImagePreScan2D<unsigned char> imagePreScanUChar(imgUChar, usImageSettings());
   imagePreScanUChar.setProbeRadius(40.10f);
-  imagePreScanUChar.setBSampleFreq(10.5f);
-  imagePreScanUChar.setLineAngle(55.84f);
-  imagePreScanUChar.setProbeElementPitch(0.05f);
+  imagePreScanUChar.setScanLinePitch(8.04);
+  imagePreScanUChar.setImageConvex(true);
   std::cout << "probe info : " << std::endl;
   imagePreScanUChar.printProbeSettings();
   std::string outputFileNameUChar("prescanUChar2D_COPY.png");
@@ -30,9 +29,8 @@ int main(int argc, const char** argv) {
   //vpImageIo::read(imgDouble, filenameDouble.c_str());
   usImagePreScan2D<double> imagePreScanDouble(imgDouble, usImageSettings());
   imagePreScanDouble.setProbeRadius(40.10f);
-  imagePreScanDouble.setBSampleFreq(10.5f);
-  imagePreScanDouble.setLineAngle(55.84f);
-  imagePreScanDouble.setProbeElementPitch(0.05f);
+  imagePreScanDouble.setScanLinePitch(10.5f);
+  imagePreScanDouble.setImageConvex(true);
   std::cout << "probe info : " << std::endl;
   imagePreScanDouble.printProbeSettings();
   //std::string outputFileNameDouble("prescanUChar2D_COPY.png");
