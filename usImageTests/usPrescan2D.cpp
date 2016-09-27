@@ -25,15 +25,15 @@ int main(int argc, const char** argv) {
   //prescan image of double type
   std::cout << "Testing usImagePreScan2D<double> : " << std::endl;
   vpImage<double> imgDouble;
-  //std::string filenameDouble = std::string("prescanDouble2D.png");
-  //vpImageIo::read(imgDouble, filenameDouble.c_str());
+  std::string filenameDouble = std::string("prescanDouble2D.png");
+  //vpImageIo::read(imgDouble, filenameDouble);
   usImagePreScan2D<double> imagePreScanDouble(imgDouble, usImageSettings());
   imagePreScanDouble.setProbeRadius(40.10f);
   imagePreScanDouble.setScanLinePitch(10.5f);
   imagePreScanDouble.setImageConvex(true);
   std::cout << "probe info : " << std::endl;
   imagePreScanDouble.printProbeSettings();
-  //std::string outputFileNameDouble("prescanUChar2D_COPY.png");
+  std::string outputFileNameDouble("prescanUChar2D_COPY.png");
   //vpImageIo::write(imgDouble, outputFileNameDouble);
 
   exit(EXIT_SUCCESS);

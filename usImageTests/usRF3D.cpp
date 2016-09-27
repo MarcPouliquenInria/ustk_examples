@@ -1,10 +1,11 @@
 #include <visp3/ustk_core/usImageRF3D.h>
+#include <visp3/ustk_core/usImageSettings.h>
 
 int main(int argc, const char** argv) {
   //Testing usImageRF3D
 
   usImage3D<short> img;
-  usImageRF3D imageRF3D(img, usImageSettings3D());
+  usImageRF3D<short> imageRF3D(img, usImageSettings3D());
   std::cout << "probe info at init : " << std::endl;
   imageRF3D.printProbeSettings();
   imageRF3D.setProbeRadius(40.10f);
