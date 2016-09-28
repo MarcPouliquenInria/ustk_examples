@@ -2,8 +2,10 @@
 #include <visp3/ustk_io/usImageIo.h>
 
 int main(int argc, const char** argv) {
-  std::cout << "test 1" << std::endl;
   usImageIo img;
-  img.readPostScan3D(std::string("C:/Users/mpouliqu/Documents/DataUS/postscan/3D/postscan3d.mhd")); ///home/mpouliqu/Documents/usData/postscan/3D/postscan3d.mhd
+  usImagePostScan3D<unsigned char> postScanImage3D;
+  img.read(postScanImage3D,std::string("/home/mpouliqu/Documents/usData/ustk-tests-dataset/postscan3d.mhd"));
+
+  std::cout << "scanline pitch: " << postScanImage3D.getScanLinePitch() << std::endl;
   exit(EXIT_SUCCESS);
 }
