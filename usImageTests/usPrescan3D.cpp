@@ -4,7 +4,7 @@ int main(int argc, const char** argv) {
   //prescan image of uchar type
   std::cout << "Testing usImagePreScan3D<unsigned char> : " << std::endl;
   usImage3D<unsigned char> imgUChar;
-  usImageSettings3D settingsUChar;
+  /*usImageSettings3D settingsUChar;
   usImagePreScan3D<unsigned char> imagePreScan3DUChar(imgUChar, settingsUChar);
   //print default values
   std::cout << "probe default info : " << std::endl;
@@ -33,7 +33,7 @@ int main(int argc, const char** argv) {
   imagePreScan3DDouble.setFramePitch(0.05f);
   //print updated values
   std::cout << "probe new info : " << std::endl;
-  imagePreScan3DDouble.printProbeSettings();
+  imagePreScan3DDouble.printProbeSettings();*/
 
   exit(EXIT_SUCCESS);
 }

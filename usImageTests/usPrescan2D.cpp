@@ -13,7 +13,7 @@ int main(int argc, const char** argv) {
     std::cout << "Error reading image file !" << std::endl;
     std::cout << e.what() << std::endl;
   }
-  usImagePreScan2D<unsigned char> imagePreScanUChar(imgUChar, usImageSettings());
+  /*usImagePreScan2D<unsigned char> imagePreScanUChar(imgUChar, usImageSettings());
   imagePreScanUChar.setProbeRadius(40.10f);
   imagePreScanUChar.setScanLinePitch(8.04);
   imagePreScanUChar.setImageConvex(true);
@@ -35,6 +35,6 @@ int main(int argc, const char** argv) {
   imagePreScanDouble.printProbeSettings();
   std::string outputFileNameDouble("prescanUChar2D_COPY.png");
   //vpImageIo::write(imgDouble, outputFileNameDouble);
-
+*/
   exit(EXIT_SUCCESS);
 }
