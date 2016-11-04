@@ -102,6 +102,7 @@ vpThread::Return displayFunction(vpThread::Args args)
       // To check/improve:
       // - adding depth in usTransducerSettings ?
       // - in usBackScanConverter2D, rename AN into BModeSampleNumber
+      // - in usTransducerSettings add getFov() and modify the example to use this function
 
       // Convert image into post-scan image
       postScan_.setData(I_);
@@ -132,16 +133,18 @@ vpThread::Return displayFunction(vpThread::Args args)
       converter_.run(confidencePostScan_,confidencePreScan_);
 
 
-      /***********END CONFIDENCE*************/
-
       // Check if we need to initialize the display with the first frame
       if (! display_initialized_) {
         // Initialize the display
 #if defined(VISP_HAVE_X11)
-        dpost_scan_ = new vpDisplayX(postScan_, 10, 10);
-        dpre_scan_ = new vpDisplayX(preScan_, 40+postScan_.getWidth(), 10);
-        dpre_scan_confidence_ = new vpDisplayX(confidencePreScan_,10,10);
-        dpost_scan_confidence_ = new vpDisplayX(confidencePostScan_,10,10);
+        unsigned int xpos = 10;
+        dpost_scan_ = new vpDisplayX(postScan_, xpos, 10, "post-scan");
+        xpos += 80+postScan_.getWidth();
+        dpre_scan_ = new vpDisplayX(preScan_, xpos, 10, "pre-scan");
+        xpos += 40+preScan_.getWidth();
+        dpre_scan_confidence_ = new vpDisplayX(confidencePreScan_, xpos, 10, "pre-scan confidence");
+        xpos += 40+confidencePreScan_.getWidth();
+        dpost_scan_confidence_ = new vpDisplayX(confidencePostScan_, xpos, 10, "post-scan confidence");
         display_initialized_ = true;
 #endif
       }
