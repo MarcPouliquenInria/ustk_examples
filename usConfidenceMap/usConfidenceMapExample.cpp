@@ -74,7 +74,7 @@ int main(int argc, const char** argv) {
     reader.acquire(currentImage);
 
     //initialisations
-    //settings for sonosite probe
+    //settings for ultrasonix probe
     scanConverter.init(currentImage.getHeight(), currentImage.getWidth(),1540.0,
                        postScanResolution,currentImage.getTransducerRadius(),(int) (10*currentImage.getHeight()),
                        4.25e-4, 128);
