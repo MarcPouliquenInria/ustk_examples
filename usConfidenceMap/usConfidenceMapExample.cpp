@@ -40,7 +40,7 @@
 #include <visp3/ustk_io/usSequenceReader.h>
 #include <visp3/ustk_io/usSequenceWriter.h>
 
-#include <visp3/ustk_confidence_map/usScanlineConf2D.h>
+#include <visp3/ustk_confidence_map/usScanlineConfidence2D.h>
 
 int main(int argc, const char** argv) {
   std::cout << "usage : ./usconfidenceMapExample /path/to/mysequence.xml" <<std::endl;
@@ -50,7 +50,7 @@ int main(int argc, const char** argv) {
   }
 
   //confidence processor and scan converter
-  usScanlineConf2D confidenceMapProcessor;
+  usScanlineConfidence2D confidenceMapProcessor;
   usScanConverter2D scanConverter;
   double postScanResolution = 5.0e-4;
 
@@ -74,10 +74,11 @@ int main(int argc, const char** argv) {
     reader.acquire(currentImage);
 
     //initialisations
+    //settings for sonosite probe
     scanConverter.init(currentImage.getHeight(), currentImage.getWidth(),1540.0,
                        postScanResolution,currentImage.getTransducerRadius(),(int) (10*currentImage.getHeight()),
                        4.25e-4, 128);
-    confidenceMapProcessor.init(usScanlineConf2D::US_CONF_INTEGRATION);
+    confidenceMapProcessor.init(usScanlineConfidence2D::US_CONF_INTEGRATION);
 
     //computing pre-scan confidence map
     usImagePreScan2D<unsigned char> confidencePreScan;
