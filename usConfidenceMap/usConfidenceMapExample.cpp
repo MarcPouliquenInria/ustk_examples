@@ -60,7 +60,7 @@ int main(int argc, const char** argv) {
   reader.setSequenceFileName(sequenceFileName);
 
   //to write the confidence sequence
-  std::string  outputSequence = "/tmp/" + vpIoTools::getUserName() + "/confidenceMapSequence/" ;
+  std::string  outputSequence = vpIoTools::getParent(sequenceFileName) + "/confidenceMapSequence/" ;
   vpIoTools::makeDirectory(outputSequence);
   outputSequence += "confidenceSequence.xml";
   std::string outputImage = "confidence%04d.png";
@@ -92,5 +92,6 @@ int main(int argc, const char** argv) {
     //writing
     writer.saveImage(confidencePostScan);
   }
+  writer.close();
   exit(EXIT_SUCCESS);
 }
