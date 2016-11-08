@@ -126,10 +126,10 @@ main()
       break;
     case vpRobotViper850::MANUAL:
       for (int i=0; i< 3; i++)
-        lambda[i][i] = 0.02/2; // 0.02 with old sensor
+        lambda[i][i] = 0.02/12;
       // Initialized the torque gain
       for (int i=3; i< 6; i++)
-        lambda[i][i] = 1./3.; // 1  with old sensor
+        lambda[i][i] = 1./6;
       break;
     }
 

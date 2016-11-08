@@ -24,4 +24,7 @@ target_link_libraries(tutorial-sonosite-grabber visp_gui visp_sensor visp_ustk_c
 add_executable(tutorial-sonosite-confidence-map tutorial-sonosite-confidence-map.cpp)
 target_link_libraries(tutorial-sonosite-confidence-map visp_gui visp_sensor visp_ustk_confidence_map)
 
+add_executable(tutorial-sonosite-confidence-control tutorial-sonosite-confidence-control.cpp)
+target_link_libraries(tutorial-sonosite-confidence-control visp_gui visp_sensor visp_robot visp_ustk_confidence_map)
+
 
